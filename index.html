@@ -2,9 +2,8 @@
 <html>
 
 <head>
-    <title>Note Wheel</title>
-    <script src="Chart.js-2.5.0/dist/Chart.bundle.js"></script>
-    <script src="Chart.js-2.5.0/samples/utils.js"></script>
+    <title>Polar Area Chart</title>
+    <script src="Chart/dist/Chart.bundle.js"></script>
     <style>
     canvas {
         -moz-user-select: none;
@@ -18,10 +17,8 @@
     <div id="canvas-holder" style="width:50%">
         <canvas id="chart-area"></canvas>
     </div>
-    
-	
-	<script>
 
+    <script>
     var randomScalingFactor = function() {
         return Math.round(Math.random() * 100);
     };
@@ -44,14 +41,13 @@
 					65,
 					65,
                 ],
-				
                 backgroundColor: [
-                    "#1874cd", "#2C0095", "#760190", "#E4007B", "#b22222", "#FE0000", "#e67300", "#FDB700", "yellow", "#81D500", "#217B33", "#13979a"
+                    "#1874cd", "#2C0095", "#760190", "#E4007B", "#b22222", "#FE0000", "#e67300", "#FDB700", "yellow", "#81D500", "#217B33", "#13979a",
                 ],
                 label: 'My dataset' // for legend
             }],
             labels: [
-                "C",
+                    "C",
                 "C#/Db",
                 "D",
                 "D#/Eb",
@@ -71,7 +67,7 @@
             },
             title: {
                 display: true,
-                text: ''
+                text: 'Chart.js Polar Area Chart'
             },
             scale: {
               ticks: {
@@ -91,6 +87,14 @@
         window.myPolarArea = Chart.PolarArea(ctx, config);
     };
 
+    document.getElementById('randomizeData').addEventListener('click', function() {
+        config.data.datasets.forEach(function(piece, i) {
+            piece.data.forEach(function(value, j) {
+                config.data.datasets[i].data[j] = randomScalingFactor();
+            });
+        });
+        window.myPolarArea.update();
+    });
 
     var colorNames = Object.keys(window.chartColors);
     document.getElementById('addData').addEventListener('click', function() {
@@ -104,9 +108,15 @@
             window.myPolarArea.update();
         }
     });
-
+    document.getElementById('removeData').addEventListener('click', function() {
+        config.data.labels.pop(); // remove the label first
+        config.data.datasets.forEach(function(dataset) {
+            dataset.backgroundColor.pop();
+            dataset.data.pop();
+        });
+        window.myPolarArea.update();
+    });
     </script>
 </body>
 
 </html>
-
