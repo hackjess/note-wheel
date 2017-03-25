@@ -8,36 +8,27 @@ var randomScalingFactor = function() {
         data: {
             datasets: [{
                 data: [
-                    65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
                 ],
-				
                 backgroundColor: [
-                    "#1874cd", "#2C0095", "#760190", "#E4007B", "#b22222", "#FE0000", "#e67300", "#FDB700", "yellow", "#81D500", "#217B33", "#13979a"
+                    color(chartColors.red).alpha(0.5).rgbString(),
+                    color(chartColors.orange).alpha(0.5).rgbString(),
+                    color(chartColors.yellow).alpha(0.5).rgbString(),
+                    color(chartColors.green).alpha(0.5).rgbString(),
+                    color(chartColors.blue).alpha(0.5).rgbString(),
                 ],
                 label: 'My dataset' // for legend
             }],
             labels: [
-                "C",
-                "C#/Db",
-                "D",
-                "D#/Eb",
-                "F",
-				"F#/Gb",
-				"G",
-				"G#/Ab",
-				"A",
-				"A#/Bb",
-				"B"
+                "Red",
+                "Orange",
+                "Yellow",
+                "Green",
+                "Blue"
             ]
         },
         options: {
@@ -67,6 +58,14 @@ var randomScalingFactor = function() {
         window.myPolarArea = Chart.PolarArea(ctx, config);
     };
 
+    document.getElementById('randomizeData').addEventListener('click', function() {
+        config.data.datasets.forEach(function(piece, i) {
+            piece.data.forEach(function(value, j) {
+                config.data.datasets[i].data[j] = randomScalingFactor();
+            });
+        });
+        window.myPolarArea.update();
+    });
 
     var colorNames = Object.keys(window.chartColors);
     document.getElementById('addData').addEventListener('click', function() {
@@ -79,4 +78,12 @@ var randomScalingFactor = function() {
             });
             window.myPolarArea.update();
         }
+    });
+    document.getElementById('removeData').addEventListener('click', function() {
+        config.data.labels.pop(); // remove the label first
+        config.data.datasets.forEach(function(dataset) {
+            dataset.backgroundColor.pop();
+            dataset.data.pop();
+        });
+        window.myPolarArea.update();
     });
