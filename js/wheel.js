@@ -44,7 +44,10 @@
         options: {
             responsive: true,
             legend: {
-                position: 'right',
+                display: false,
+      labels: {
+        display: false
+      }
             },
   pieceLabel: {
     mode: 'label'

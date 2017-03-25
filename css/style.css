@@ -6,6 +6,10 @@ canvas#myCanvas{
 	text-align: center;
 }
 
+div#canvas-holder{
+	padding-left: 100px;	
+}
+
 h2{
 	text-align: center;	
 }
@@ -14,3 +18,4 @@ h2{
   width: 100%;
   height: 500px;
 }
+
