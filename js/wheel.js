@@ -45,13 +45,13 @@
             responsive: true,
             legend: {
                 display: false,
-      labels: {
-        display: false
-      }
+      			labels: {
+        			display: false
+      			}
             },
-  pieceLabel: {
-    mode: 'label'
-  },
+  			pieceLabel: {
+    			mode: 'label'
+  			},
             animation: {
                 animateRotate: false,
                 animateScale: true
