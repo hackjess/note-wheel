@@ -1,36 +1,39 @@
 var randomScalingFactor = function() {
         return Math.round(Math.random() * 100);
     };
-
+	
+	var Cper = CsDfPer = Dper = DsEbper = Eper = Fper = FsGbper = Gper = GsAbper = Aper =AsBfper = Bper = 65;
+	console.log(Cper);
     var chartColors = window.chartColors;
     var color = Chart.helpers.color;
     var config = {
         data: {
             datasets: [{
                 data: [
-                    65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
+                    Cper,
+					CsDfPer,
+					Dper,
+					DsEbper,
+					Eper,
+					Fper,
+					FsGbper,
+					Gper,
+					GsAbper,
+					Aper,
+					AsBfper,
+					Bper,
                 ],
-				
                 backgroundColor: [
-                    "#1874cd", "#2C0095", "#760190", "#E4007B", "#b22222", "#FE0000", "#e67300", "#FDB700", "yellow", "#81D500", "#217B33", "#13979a"
+                    "#1874cd", "#2C0095", "#760190", "#E4007B", "#b22222", "#FE0000", "#e67300", "#FDB700", "yellow", "#81D500", "#217B33", "#13979a",
                 ],
-                label: 'My dataset' // for legend
+                label: 'Note' // for legend
             }],
             labels: [
                 "C",
                 "C#/Db",
                 "D",
                 "D#/Eb",
+				"E",
                 "F",
 				"F#/Gb",
 				"G",
@@ -45,20 +48,14 @@ var randomScalingFactor = function() {
             legend: {
                 position: 'right',
             },
-            title: {
-                display: true,
-                text: 'Chart.js Polar Area Chart'
-            },
-            scale: {
-              ticks: {
-                beginAtZero: true
-              },
-              reverse: false
-            },
+  pieceLabel: {
+    mode: 'label'
+  },
             animation: {
                 animateRotate: false,
                 animateScale: true
             }
+			
         }
     };
 
@@ -67,16 +64,11 @@ var randomScalingFactor = function() {
         window.myPolarArea = Chart.PolarArea(ctx, config);
     };
 
-
-    var colorNames = Object.keys(window.chartColors);
-    document.getElementById('addData').addEventListener('click', function() {
-        if (config.data.datasets.length > 0) {
-            config.data.labels.push('data #' + config.data.labels.length);
-            config.data.datasets.forEach(function(dataset) {
-                var colorName = colorNames[config.data.labels.length % colorNames.length];
-                dataset.backgroundColor.push(window.chartColors[colorName]);
-                dataset.data.push(randomScalingFactor());
+    document.getElementById('randomizeData').addEventListener('click', function() {
+        config.data.datasets.forEach(function(piece, i) {
+            piece.data.forEach(function(value, j) {
+                config.data.datasets[i].data[j] = randomScalingFactor();
             });
-            window.myPolarArea.update();
-        }
+        });
+        window.myPolarArea.update();
     });

@@ -11,13 +11,8 @@
 <!--Local Styling-->
 <link rel="stylesheet" href="css/style.css">
 <script src="Chart/dist/Chart.bundle.js"></script>
-<style>
-canvas {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-}
-</style>
+<script src="js/wheel.js"></script>
+
 </head>
 
 <body>
@@ -35,119 +30,33 @@ canvas {
     <button id="randomizeData">Randomize Data</button> <br/>
     <label>Root Note</label><br/>
     <div class="btn-group" role="group" aria-label="RootNote">
-      <button id="C" type="button" class="btn btn-default">C</button>
-      <button id="C#" type="button" class="btn btn-default">C#/Db</button>
-      <button id="D" type="button" class="btn btn-default">D</button>
-      <button id="D#" type="button" class="btn btn-default">D#/Eb</button>
-      <button id="E" type="button" class="btn btn-default">E</button>
-      <button id="F" type="button" class="btn btn-default">F</button><br/>
-      <button id="F#" type="button" class="btn btn-default">F#/Gb</button> 
-      <button id="G" type="button" class="btn btn-default">G</button>
-      <button id="G#" type="button" class="btn btn-default">G#/Ab</button>
-      <button id="A" type="button" class="btn btn-default">A</button>
-      <button id="A#" type="button" class="btn btn-default">A#/Bb</button>
-      <button id="B" type="button" class="btn btn-default">B</button>
+      <button id="C" onClick="chooseNote(0)" type="button" class="btn btn-default">C</button>
+      <button id="C#" onClick="chooseNote(1)" type="button" class="btn btn-default">C#/Db</button>
+      <button id="D" onClick="chooseNote(2)" type="button" class="btn btn-default">D</button>
+      <button id="D#" onClick="chooseNote(3)" type="button" class="btn btn-default">D#/Eb</button>
+      <button id="E" onClick="chooseNote(4)" type="button" class="btn btn-default">E</button>
+      <button id="F" onClick="chooseNote(5)" type="button" class="btn btn-default">F</button><br/>
+      <button id="F#" onClick="chooseNote(6)" type="button" class="btn btn-default">F#/Gb</button> 
+      <button id="G" onClick="chooseNote(7)" type="button" class="btn btn-default">G</button>
+      <button id="G#" onClick="chooseNote(8)" type="button" class="btn btn-default">G#/Ab</button>
+      <button id="A" onClick="chooseNote(9)" type="button" class="btn btn-default">A</button>
+      <button id="A#" onClick="chooseNote(10)" type="button" class="btn btn-default">A#/Bb</button>
+      <button id="B" onClick="chooseNote(11)" type="button" class="btn btn-default">B</button>
     </div> <br/>
     
     <label>Chord Type</label><br/>
     <div class="btn-group" role="group" aria-label="RootNote">
-      <button id="Major" type="button" class="btn btn-default">Major</button>
-      <button id="Minor" type="button" class="btn btn-default">Minor</button>
-      <button id="Dim" type="button" class="btn btn-default">Diminished</button> <br/>
-      <button id="Sus2" type="button" class="btn btn-default">Sus2</button>
-      <button id="Sus4" type="button" class="btn btn-default">Sus4</button>
-      <button id="Aug" type="button" class="btn btn-default">Augmented</button>
-
+      <button id="Major" type="button" onClick="chooseChordType(0)" class="btn btn-default">Major</button>
+      <button id="Minor" type="button" onClick="chooseChordType(1)" class="btn btn-default">Minor</button>
+      <button id="Dim" type="button" onClick="chooseChordType(2)" class="btn btn-default">Diminished</button> <br/>
+      <button id="Sus2" type="button" onClick="chooseChordType(3)" class="btn btn-default">Sus2</button>
+      <button id="Sus4" type="button" onClick="chooseChordType(4)"  class="btn btn-default">Sus4</button>
+      <button id="Aug" type="button" onClick="chooseChordType(5)" class="btn btn-default">Augmented</button>
     </div>
   </div>
 </div>
 <!--row-->
-<script>
-    var randomScalingFactor = function() {
-        return Math.round(Math.random() * 100);
-    };
-	
-	var Cper = CsDfPer = Dper = DsEbper = Eper = Fper = FsGbper = Gper = GsAbper = Aper =AsBfper = Bper = 65;
-	console.log(Cper);
-    var chartColors = window.chartColors;
-    var color = Chart.helpers.color;
-    var config = {
-        data: {
-            datasets: [{
-                data: [
-                    Cper,
-					CsDfPer,
-					Dper,
-					DsEbper,
-					Eper,
-					Fper,
-					FsGbper,
-					Gper,
-					GsAbper,
-					Aper,
-					AsBfper,
-					Bper,
-                ],
-                backgroundColor: [
-                    "#1874cd", "#2C0095", "#760190", "#E4007B", "#b22222", "#FE0000", "#e67300", "#FDB700", "yellow", "#81D500", "#217B33", "#13979a",
-                ],
-                label: 'My dataset' // for legend
-            }],
-            labels: [
-                "C",
-                "C#/Db",
-                "D",
-                "D#/Eb",
-				"E",
-                "F",
-				"F#/Gb",
-				"G",
-				"G#/Ab",
-				"A",
-				"A#/Bb",
-				"B"
-            ]
-        },
-        options: {
-            responsive: true,
-            legend: {
-                position: 'right',
-            },
-            title: {
-                display: true,
-                text: ''
-            },
-            scale: {
-              ticks: {
-                beginAtZero: true,
-              },
-			  
-              reverse: false
-            },
-            animation: {
-                animateRotate: false,
-                animateScale: true
-            }
-        }
-    };
 
-    window.onload = function() {
-        var ctx = document.getElementById("chart-area");
-        window.myPolarArea = Chart.PolarArea(ctx, config);
-    };
-
-    document.getElementById('randomizeData').addEventListener('click', function() {
-        config.data.datasets.forEach(function(piece, i) {
-            piece.data.forEach(function(value, j) {
-                config.data.datasets[i].data[j] = randomScalingFactor();
-            });
-        });
-        window.myPolarArea.update();
-    });
-
-
-
-    </script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
