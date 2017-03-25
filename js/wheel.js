@@ -42,16 +42,18 @@
             ]
         },
         options: {
-            responsive: true,
+            scale: {
+        ticks: {
+            stepSize: 85,
+			display: false
+        }
+    },responsive: true,
             legend: {
                 display: false,
       			labels: {
         			display: false
       			}
             },
-  			pieceLabel: {
-    			mode: 'label'
-  			},
             animation: {
                 animateRotate: false,
                 animateScale: true

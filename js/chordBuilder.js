@@ -6,7 +6,6 @@
 // declare intervals
 var root = chooseNote(noteChoice);
 
-
 function chooseNote(noteChoice){
     root = noteChoice;
 	for (i = 0; i < 12; i++){
