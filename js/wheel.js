@@ -1,7 +1,6 @@
 
 	
 	var Cper = CsDfPer = Dper = DsEbper = Eper = Fper = FsGbper = Gper = GsAbper = Aper =AsBfper = Bper = 65;
-	console.log(Cper);
     var chartColors = window.chartColors;
     var color = Chart.helpers.color;
     var config = {

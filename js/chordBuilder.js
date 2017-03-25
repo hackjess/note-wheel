@@ -1,8 +1,5 @@
 // JavaScript Document
 
-
-
-
 // declare intervals
 var root = chooseNote(noteChoice);
 
@@ -10,8 +7,9 @@ function chooseNote(noteChoice){
     root = noteChoice;
 	for (i = 0; i < 12; i++){
 		config.data.datasets[0].data[i] = 65;
-	}
+	}  
 	window.myPolarArea.update();
+	return root;
 }
 
 function chooseChordType(chordTypechoice){
@@ -91,6 +89,7 @@ function chooseChordType(chordTypechoice){
 		config.data.datasets[0].data[AUGMENTED_FIFTH] = 85;
 		window.myPolarArea.update();
  	}
+	return chordType;
 }
 
 
