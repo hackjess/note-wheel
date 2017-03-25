@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* CSS Document */
+
+canvas#myCanvas{
+	margin: 0 auto;
+	text-align: center;
+}
+
+h2{
+	text-align: center;	
+}
