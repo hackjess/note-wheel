@@ -1,45 +1,92 @@
 <!doctype html>
 <html>
-
 <head>
-    <title>Polar Area Chart</title>
-    <script src="Chart/dist/Chart.bundle.js"></script>
-    <style>
-    canvas {
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-    }
-    </style>
+<title>Polar Area Chart</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--Local Styling-->
+<link rel="stylesheet" href="css/style.css">
+<script src="Chart/dist/Chart.bundle.js"></script>
+<style>
+canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+</style>
 </head>
 
 <body>
-    <div id="canvas-holder" style="width:50%">
-        <canvas id="chart-area"></canvas>
+<div class="row">
+  <h2>Color "Chordination"</h2>
+</div>
+<div class="row">
+  <div class="col-md-7">
+    <div id="canvas-holder" style="width:85%">
+      <canvas id="chart-area"></canvas>
     </div>
+  </div>
+  <!--col-->
+  <div class="col-md-5">
+    <button id="randomizeData">Randomize Data</button> <br/>
+    <label>Root Note</label><br/>
+    <div class="btn-group" role="group" aria-label="RootNote">
+      <button id="C" type="button" class="btn btn-default">C</button>
+      <button id="C#" type="button" class="btn btn-default">C#/Db</button>
+      <button id="D" type="button" class="btn btn-default">D</button>
+      <button id="D#" type="button" class="btn btn-default">D#/Eb</button>
+      <button id="E" type="button" class="btn btn-default">E</button>
+      <button id="F" type="button" class="btn btn-default">F</button><br/>
+      <button id="F#" type="button" class="btn btn-default">F#/Gb</button> 
+      <button id="G" type="button" class="btn btn-default">G</button>
+      <button id="G#" type="button" class="btn btn-default">G#/Ab</button>
+      <button id="A" type="button" class="btn btn-default">A</button>
+      <button id="A#" type="button" class="btn btn-default">A#/Bb</button>
+      <button id="B" type="button" class="btn btn-default">B</button>
+    </div> <br/>
+    
+    <label>Chord Type</label><br/>
+    <div class="btn-group" role="group" aria-label="RootNote">
+      <button id="Major" type="button" class="btn btn-default">Major</button>
+      <button id="Minor" type="button" class="btn btn-default">Minor</button>
+      <button id="Dim" type="button" class="btn btn-default">Diminished</button> <br/>
+      <button id="Sus2" type="button" class="btn btn-default">Sus2</button>
+      <button id="Sus4" type="button" class="btn btn-default">Sus4</button>
+      <button id="Aug" type="button" class="btn btn-default">Augmented</button>
 
-    <script>
+    </div>
+  </div>
+</div>
+<!--row-->
+<script>
     var randomScalingFactor = function() {
         return Math.round(Math.random() * 100);
     };
-
+	
+	var Cper = CsDfPer = Dper = DsEbper = Eper = Fper = FsGbper = Gper = GsAbper = Aper =AsBfper = Bper = 65;
+	console.log(Cper);
     var chartColors = window.chartColors;
     var color = Chart.helpers.color;
     var config = {
         data: {
             datasets: [{
                 data: [
-                    65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
-					65,
+                    Cper,
+					CsDfPer,
+					Dper,
+					DsEbper,
+					Eper,
+					Fper,
+					FsGbper,
+					Gper,
+					GsAbper,
+					Aper,
+					AsBfper,
+					Bper,
                 ],
                 backgroundColor: [
                     "#1874cd", "#2C0095", "#760190", "#E4007B", "#b22222", "#FE0000", "#e67300", "#FDB700", "yellow", "#81D500", "#217B33", "#13979a",
@@ -47,10 +94,11 @@
                 label: 'My dataset' // for legend
             }],
             labels: [
-                    "C",
+                "C",
                 "C#/Db",
                 "D",
                 "D#/Eb",
+				"E",
                 "F",
 				"F#/Gb",
 				"G",
@@ -67,12 +115,13 @@
             },
             title: {
                 display: true,
-                text: 'Chart.js Polar Area Chart'
+                text: ''
             },
             scale: {
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
               },
+			  
               reverse: false
             },
             animation: {
@@ -96,27 +145,12 @@
         window.myPolarArea.update();
     });
 
-    var colorNames = Object.keys(window.chartColors);
-    document.getElementById('addData').addEventListener('click', function() {
-        if (config.data.datasets.length > 0) {
-            config.data.labels.push('data #' + config.data.labels.length);
-            config.data.datasets.forEach(function(dataset) {
-                var colorName = colorNames[config.data.labels.length % colorNames.length];
-                dataset.backgroundColor.push(window.chartColors[colorName]);
-                dataset.data.push(randomScalingFactor());
-            });
-            window.myPolarArea.update();
-        }
-    });
-    document.getElementById('removeData').addEventListener('click', function() {
-        config.data.labels.pop(); // remove the label first
-        config.data.datasets.forEach(function(dataset) {
-            dataset.backgroundColor.pop();
-            dataset.data.pop();
-        });
-        window.myPolarArea.update();
-    });
-    </script>
-</body>
 
+
+    </script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+</body>
 </html>
