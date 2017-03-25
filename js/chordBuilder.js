@@ -12,10 +12,14 @@ function chooseNote(noteChoice){
 	for (i = 0; i < 12; i++){
 		config.data.datasets[0].data[i] = 65;
 	}
+	window.myPolarArea.update();
 }
 
 function chooseChordType(chordTypechoice){
-    var chordType = chordTypechoice;
+    for (i = 0; i < 12; i++){
+		config.data.datasets[0].data[i] = 65;
+	}
+	var chordType = chordTypechoice;
 	var MAJOR_SECOND = root + 2;
 	var MINOR_THIRD = root + 3;
 	var MAJOR_THIRD = root + 4;
