@@ -64,11 +64,4 @@ var randomScalingFactor = function() {
         window.myPolarArea = Chart.PolarArea(ctx, config);
     };
 
-    document.getElementById('randomizeData').addEventListener('click', function() {
-        config.data.datasets.forEach(function(piece, i) {
-            piece.data.forEach(function(value, j) {
-                config.data.datasets[i].data[j] = randomScalingFactor();
-            });
-        });
-        window.myPolarArea.update();
-    });
+    
