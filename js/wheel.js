@@ -1,6 +1,4 @@
-var randomScalingFactor = function() {
-        return Math.round(Math.random() * 100);
-    };
+
 	
 	var Cper = CsDfPer = Dper = DsEbper = Eper = Fper = FsGbper = Gper = GsAbper = Aper =AsBfper = Bper = 65;
 	console.log(Cper);
