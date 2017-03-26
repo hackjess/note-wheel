@@ -26,11 +26,13 @@ h2{
   height: 500px;
 }
 
-.NoteGroup{
+.NoteGroup label{
 	text-align: center;
+	display: block;
 }
 
-.ChordGroup{
+.ChordGroup label{
 	text-align: center;
+	display: block;
 }
 
