@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+<!--This code was developed by Theo Greer and Jessica Hack-->
+
 <title>Color Chordination</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,7 +17,7 @@
 <script src="Chart/dist/Chart.bundle.js"></script>
 <script src="js/wheel.js"></script>
 <script src="js/chordBuilder.js"></script>
-<script src="js/staff.js"></script>
+
 <script>
 $(document).ready(function() {
 $(".btn-group.note button").click(function () {
@@ -35,7 +37,7 @@ $(".btn-group.chord button").click(function () {
 
 <body>
 <div class="row">
-  <h2>Color "Chordination"</h2>
+  <h2>Color Chordination</h2>
 </div>
 <div class="row">
   <div class="col-md-7">
@@ -59,7 +61,7 @@ $(".btn-group.chord button").click(function () {
   </div>
   <!--col-->
   <div class="col-md-4">
-    <div class="row">Instructions Row</div>
+    <div class="row">Welcome! Please select a root note and then select a chord type.</div>
     <div class="NoteGroup">
       <label>Root Note</label>
       <br/>
@@ -83,7 +85,8 @@ $(".btn-group.chord button").click(function () {
       <label>Chord Type</label>
       <br/>
       <div class="btn-group chord" role="group" aria-label="Chord">
-      <label>Three Tone</label><br/>
+      <label class="chordlabel">Three Tone</label>
+      
         <button id="Major" type="button" onClick="chooseChordType(0)" class="btn btn-default chord">Major</button>
         <button id="Minor" type="button" onClick="chooseChordType(1)" class="btn btn-default chord">Minor</button>
         <button id="Dim" type="button" onClick="chooseChordType(2)" class="btn btn-default chord">Diminished</button>
@@ -91,22 +94,27 @@ $(".btn-group.chord button").click(function () {
         <button id="Sus2" type="button" onClick="chooseChordType(3)" class="btn btn-default chord">Sus2</button>
         <button id="Sus4" type="button" onClick="chooseChordType(4)"  class="btn btn-default chord">Sus4</button>
         <button id="Aug" type="button" onClick="chooseChordType(5)" class="btn btn-default chord">Augmented</button> <br/>
-        <label>Four Tone</label><br/>
-        <button id="Major7th" type="button" onClick="chooseChordType(6)" class="btn btn-default chord">Major 7th</button>
-        <button id="Dominant7th" type="button" onClick="chooseChordType(7)" class="btn btn-default chord">Dominant 7th</button>
-        <button id="Minor7th" type="button" onClick="chooseChordType(8)" class="btn btn-default chord">Minor 7th</button>
-        <button id="HalfDim" type="button" onClick="chooseChordType(9)" class="btn btn-default chord">Half Dimin.</button>
-        <button id="FullyDim" type="button" onClick="chooseChordType(10)" class="btn btn-default chord">Diminished</button>
-        <button id="6th" type="button" onClick="chooseChordType(11)"  class="btn btn-default chord">6th</button>
-        <button id="Minor6th" type="button" onClick="chooseChordType(12)" class="btn btn-default chord">Minor 6th</button>
-        <button id="Add9" type="button" onClick="chooseChordType(13)" class="btn btn-default chord">Add9</button>
-        <button id="9" type="button" onClick="chooseChordType(14)" class="btn btn-default chord">9</button>
-      </div>
+        <div class="col-md-8">
+        <br/><label class="chordlabel">Four Tone</label>
+        <button id="Major7th" type="button" onClick="chooseChordType(6)" class="btn btn-default chord four">Major 7th</button>
+        <button id="Dominant7th" type="button" onClick="chooseChordType(7)" class="btn btn-default chord four">Dominant 7th</button>
+        <button id="Minor7th" type="button" onClick="chooseChordType(8)" class="btn btn-default chord four">Minor 7th</button>
+        <button id="HalfDim" type="button" onClick="chooseChordType(9)" class="btn btn-default chord four">Half Dimin.</button>
+        <button id="FullyDim" type="button" onClick="chooseChordType(10)" class="btn btn-default chord four">Diminished</button>
+        <button id="6th" type="button" onClick="chooseChordType(11)"  class="btn btn-default chord four">6th</button>
+        <button id="Minor6th" type="button" onClick="chooseChordType(12)" class="btn btn-default chord four">Minor 6th</button>
+        <button id="Add9" type="button" onClick="chooseChordType(13)" class="btn btn-default chord four">Add9</button>
+        </div>
+        <div class="col-md-3">
+        <br/><label class="chordlabel">Extended</label>
+        <button id="9" type="button" onClick="chooseChordType(14)" class="btn btn-default chord extended">9</button>
+        <button id="Major9" type="button" onClick="chooseChordType(15)" class="btn btn-default chord extended">Major 9</button>
+        <button id="Minor9" type="button" onClick="chooseChordType(16)" class="btn btn-default chord extended">Minor 9</button>
+        <button id="6/9" type="button" onClick="chooseChordType(17)" class="btn btn-default chord extended">6/9</button>
+        </div>
+          <div class="col-md-1"></div>
     </div>
     <!--row-->
-    <div class="row">
-      <div id="boo"></div>
-    </div>
   </div>
   <div class="col-md-1"></div>
 </div>

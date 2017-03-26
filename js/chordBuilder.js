@@ -170,7 +170,31 @@ function chooseChordType(chordTypechoice){
 		config.data.datasets[0].data[root] = 85;
 		config.data.datasets[0].data[MAJOR_THIRD] = 85;
 		config.data.datasets[0].data[PERFECT_FIFTH] = 85;
+		config.data.datasets[0].data[MINOR_SEVENTH] = 85;
 		config.data.datasets[0].data[MAJOR_SECOND] = 85;
+		window.myPolarArea.update();
+ 	}//major 9
+	else if (chordType == 15){
+		config.data.datasets[0].data[root] = 85;
+		config.data.datasets[0].data[MAJOR_THIRD] = 85;
+		config.data.datasets[0].data[PERFECT_FIFTH] = 85;
+		config.data.datasets[0].data[MAJOR_SEVENTH] = 85;
+		config.data.datasets[0].data[MAJOR_SECOND] = 85;
+		window.myPolarArea.update();
+	}//minor 9
+	else if (chordType == 16){
+		config.data.datasets[0].data[root] = 85;
+		config.data.datasets[0].data[MINOR_THIRD] = 85;
+		config.data.datasets[0].data[PERFECT_FIFTH] = 85;
+		config.data.datasets[0].data[MINOR_SEVENTH] = 85;
+		config.data.datasets[0].data[MAJOR_SECOND] = 85;
+		window.myPolarArea.update();
+ 	}//6/9
+	else if (chordType == 17){
+		config.data.datasets[0].data[root] = 85;
+		config.data.datasets[0].data[MAJOR_THIRD] = 85;
+		config.data.datasets[0].data[PERFECT_FIFTH] = 85;
+		config.data.datasets[0].data[MAJOR_SIXTH] = 85;
 		config.data.datasets[0].data[MAJOR_SECOND] = 85;
 		window.myPolarArea.update();
  	}
