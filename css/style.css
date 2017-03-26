@@ -2,10 +2,27 @@
 /* CSS Document */
 
 button.btn.btn-default.chord {
-    width: 150px;
+    width: 154px;
+	font-size: 22px
 }
+
+button.btn.btn-default.chord.active {
+    background-color: #cc3399;
+    color: white;
+    font-weight: 300;
+    border: solid black 1px;
+}
+
 button.btn.btn-default.note {
-    width: 75px;
+    width: 115px;
+	font-size: 22px
+}
+
+button.btn.btn-default.note.active {
+    background-color: #47d147;
+    color: white;
+    font-weight: 300;
+    border: solid black 1px;
 }
 
 canvas#myCanvas{

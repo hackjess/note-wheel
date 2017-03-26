@@ -10,9 +10,28 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!--Local Styling-->
 <link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+
 <script src="Chart/dist/Chart.bundle.js"></script>
 <script src="js/wheel.js"></script>
 <script src="js/chordBuilder.js"></script>
+
+<script>
+$(document).ready(function() {
+$(".btn-group.note button").click(function () {
+    $(".btn-group.note button").removeClass("active");
+    // $(".tab").addClass("active"); // instead of this do the below 
+    $(this).addClass("active");   
+});
+
+$(".btn-group.chord button").click(function () {
+    $(".btn-group.chord button").removeClass("active");
+    // $(".tab").addClass("active"); // instead of this do the below 
+    $(this).addClass("active");   
+});
+
+});
+</script>
 
 </head>
 
@@ -32,25 +51,25 @@
   
     <div class="NoteGroup">
     <label>Root Note</label><br/>
-    <div class="btn-group" role="group" aria-label="RootNote">
-      <button id="C" onClick="chooseNote(0)" type="button" class="btn btn-default note">C</button>
-      <button id="C#" onClick="chooseNote(1)" type="button" class="btn btn-default note">C#/Db</button>
-      <button id="D" onClick="chooseNote(2)" type="button" class="btn btn-default note">D</button>
-      <button id="D#" onClick="chooseNote(3)" type="button" class="btn btn-default note">D#/Eb</button>
-      <button id="E" onClick="chooseNote(4)" type="button" class="btn btn-default note">E</button>
-      <button id="F" onClick="chooseNote(5)" type="button" class="btn btn-default note">F</button><br/>
-      <button id="F#" onClick="chooseNote(6)" type="button" class="btn btn-default note">F#/Gb</button>
-      <button id="G" onClick="chooseNote(7)" type="button" class="btn btn-default note">G</button>
-      <button id="G#" onClick="chooseNote(8)" type="button" class="btn btn-default note">G#/Ab</button>
-      <button id="A" onClick="chooseNote(9)" type="button" class="btn btn-default note">A</button>
-      <button id="A#" onClick="chooseNote(10)" type="button" class="btn btn-default note">A#/Bb</button>
-      <button id="B" onClick="chooseNote(11)" type="button" class="btn btn-default note">B</button>
+    <div class="btn-group note" role="group" aria-label="RootNote">
+      <button onClick="chooseNote(0)" type="button" class="btn btn-default note">C</button>
+      <button onClick="chooseNote(1)" type="button" class="btn btn-default note">C#/Db</button>
+      <button onClick="chooseNote(2)" type="button" class="btn btn-default note">D</button>
+      <button onClick="chooseNote(3)" type="button" class="btn btn-default note">D#/Eb</button>
+      <button onClick="chooseNote(4)" type="button" class="btn btn-default note">E</button>
+      <button pnClick="chooseNote(5)" type="button" class="btn btn-default note">F</button><br/>
+      <button onClick="chooseNote(6)" type="button" class="btn btn-default note">F#/Gb</button>
+      <button onClick="chooseNote(7)" type="button" class="btn btn-default note">G</button>
+      <button onClick="chooseNote(8)" type="button" class="btn btn-default note">G#/Ab</button>
+      <button onClick="chooseNote(9)" type="button" class="btn btn-default note">A</button>
+      <button onClick="chooseNote(10)" type="button" class="btn btn-default note">A#/Bb</button>
+      <button onClick="chooseNote(11)" type="button" class="btn btn-default note">B</button>
     </div> 
     </div><br/>
 	
     <div class="ChordGroup">
     <label>Chord Type</label><br/>
-    <div class="btn-group" role="group" aria-label="Chord">
+    <div class="btn-group chord" role="group" aria-label="Chord">
       <button id="Major" type="button" onClick="chooseChordType(0)" class="btn btn-default chord">Major</button>
       <button id="Minor" type="button" onClick="chooseChordType(1)" class="btn btn-default chord">Minor</button>
       <button id="Dim" type="button" onClick="chooseChordType(2)" class="btn btn-default chord">Diminished</button> <br/>

@@ -4,7 +4,7 @@
 var root = chooseNote(noteChoice);
 
 function chooseNote(noteChoice){
-    root = noteChoice;
+	root = noteChoice;
 	for (i = 0; i < 12; i++){
 		config.data.datasets[0].data[i] = 65;
 	}  
