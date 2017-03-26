@@ -11,7 +11,7 @@ var context = renderer.getContext();
 context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
 
 // Create a stave of width 400 at position 10, 40 on the canvas.
-var stave = new VF.Stave(10, 40, 400);
+var stave = new VF.Stave(10, 40, 465);
 
 // Add a clef and time signature.
 stave.addClef("treble").addTimeSignature("4/4");
@@ -19,20 +19,12 @@ stave.addClef("treble").addTimeSignature("4/4");
 // Connect it to the rendering context and draw!
 stave.setContext(context).draw();
 
-// Create the notes
 var notes = [
-  // A quarter-note C.
-  new VF.StaveNote({ keys: ["c/4"], duration: "q" }),
+  new VF.StaveNote({clef: "treble", keys: ["c/4"], duration: "q" }),
+  new VF.StaveNote({clef: "treble", keys: ["e/4"], duration: "q" }), 
+  new VF.StaveNote({clef: "treble", keys: ["g/4"], duration: "q" }),
+  new VF.StaveNote({clef: "treble", keys: ["c/4", "e/4", "g/4"], duration: "q" }), 
 
-  // A quarter-note D.
-  new VF.StaveNote({ keys: ["d/4"], duration: "q" }),
-
-  // A quarter-note rest. Note that the key (b/4) specifies the vertical
-  // position of the rest.
-  new VF.StaveNote({ keys: ["b/4"], duration: "qr" }),
-
-  // A C-Major chord.
-  new VF.StaveNote({ keys: ["c/4", "e/4", "g/4"], duration: "q" })
 ];
 
 // Create a voice in 4/4 and add above notes
@@ -44,4 +36,7 @@ var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
 
 // Render voice
 voice.draw(context, stave);
+
+
+
 });
