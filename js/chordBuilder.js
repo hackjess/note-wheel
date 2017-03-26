@@ -13,7 +13,7 @@ function chooseNote(noteChoice){
 }
 
 function chooseChordType(chordTypechoice){
-    for (i = 0; i < 12; i++){
+    for (i = 0; i < 11; i++){
 		config.data.datasets[0].data[i] = 65;
 	}
 	var chordType = chordTypechoice;
@@ -37,12 +37,12 @@ function chooseChordType(chordTypechoice){
 	if (PERFECT_FOURTH> 11){
 		PERFECT_FOURTH = PERFECT_FOURTH - 12;
 	}
-	if (DIMINISHED_FIFTH> 11){
+	if (DIMINISHED_FIFTH > 11){
 		DIMINISHED_FIFTH = DIMINISHED_FIFTH - 12;
 	}
 	if (PERFECT_FIFTH > 11){
 		PERFECT_FIFTH = PERFECT_FIFTH - 12;
-	}
+	} 
 	if (AUGMENTED_FIFTH > 11){
 		AUGMENTED_FIFTH = AUGMENTED_FIFTH- 12;
 	}
