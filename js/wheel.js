@@ -52,10 +52,7 @@
   legend: {
     display: false
   },
-  pieceLabel: {
-    mode: 'label'
-  },
-            animation: {
+       animation: {
                 animateRotate: false,
                 animateScale: true
             }	

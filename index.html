@@ -20,13 +20,12 @@
 $(document).ready(function() {
 $(".btn-group.note button").click(function () {
     $(".btn-group.note button").removeClass("active");
-    // $(".tab").addClass("active"); // instead of this do the below 
+	$(".btn-group.chord button").removeClass("active");
     $(this).addClass("active");   
 });
 
 $(".btn-group.chord button").click(function () {
     $(".btn-group.chord button").removeClass("active");
-    // $(".tab").addClass("active"); // instead of this do the below 
     $(this).addClass("active");   
 });
 
@@ -84,15 +83,15 @@ $(".btn-group.chord button").click(function () {
       <label>Chord Type</label>
       <br/>
       <div class="btn-group chord" role="group" aria-label="Chord">
-      <label>Three Tone</label>
+      <label>Three Tone</label><br/>
         <button id="Major" type="button" onClick="chooseChordType(0)" class="btn btn-default chord">Major</button>
         <button id="Minor" type="button" onClick="chooseChordType(1)" class="btn btn-default chord">Minor</button>
         <button id="Dim" type="button" onClick="chooseChordType(2)" class="btn btn-default chord">Diminished</button>
         <br/>
         <button id="Sus2" type="button" onClick="chooseChordType(3)" class="btn btn-default chord">Sus2</button>
         <button id="Sus4" type="button" onClick="chooseChordType(4)"  class="btn btn-default chord">Sus4</button>
-        <button id="Aug" type="button" onClick="chooseChordType(5)" class="btn btn-default chord">Augmented</button>
-        <label>Four Tone</label>
+        <button id="Aug" type="button" onClick="chooseChordType(5)" class="btn btn-default chord">Augmented</button> <br/>
+        <label>Four Tone</label><br/>
         <button id="Major7th" type="button" onClick="chooseChordType(6)" class="btn btn-default chord">Major 7th</button>
         <button id="Dominant7th" type="button" onClick="chooseChordType(7)" class="btn btn-default chord">Dominant 7th</button>
         <button id="Minor7th" type="button" onClick="chooseChordType(8)" class="btn btn-default chord">Minor 7th</button>
