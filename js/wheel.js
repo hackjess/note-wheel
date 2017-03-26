@@ -47,13 +47,14 @@
 					display: false
        			}
     		},
+			
 			responsive: true,
-            legend: {
-                display: false,
-      			labels: {
-        			display: false
-      			}
-            },
+  legend: {
+    display: false
+  },
+  pieceLabel: {
+    mode: 'label'
+  },
             animation: {
                 animateRotate: false,
                 animateScale: true

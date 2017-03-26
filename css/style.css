@@ -33,7 +33,54 @@ canvas#myCanvas{
 div#canvas-holder{
 	padding-left: 100px;	
 }
-
+div#labelC {
+    position: absolute;
+    left: 56%;
+    top: 13.5%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelCsharp {
+    position: absolute;
+    left: 62%;
+    top: 25%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelD {
+    position: absolute;
+    left: 74%;
+    top: 39%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelDsharp {
+    position: absolute;
+    left: 68%;
+    top: 53%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelE {
+    position: absolute;
+    left: 68%;
+    top: 71%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelF{
+    position: absolute;
+    left: 68%;
+    top: 71%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
 h2{
 	text-align: center;	
 }
@@ -52,4 +99,3 @@ h2{
 	text-align: center;
 	display: block;
 }
-
