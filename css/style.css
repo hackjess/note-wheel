@@ -1,6 +1,13 @@
 @charset "UTF-8";
 /* CSS Document */
 
+button.btn.btn-default.chord {
+    width: 150px;
+}
+button.btn.btn-default.note {
+    width: 75px;
+}
+
 canvas#myCanvas{
 	margin: 0 auto;
 	text-align: center;

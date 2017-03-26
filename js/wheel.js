@@ -42,11 +42,12 @@
         },
         options: {
             scale: {
-        ticks: {
-            stepSize: 85,
-			display: false
-        }
-    },responsive: true,
+       			ticks: {
+            		stepSize: 85,
+					display: false
+       			}
+    		},
+			responsive: true,
             legend: {
                 display: false,
       			labels: {
@@ -56,8 +57,7 @@
             animation: {
                 animateRotate: false,
                 animateScale: true
-            }
-			
+            }	
         }
     };
 
