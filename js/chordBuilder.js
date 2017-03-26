@@ -1,7 +1,7 @@
 // JavaScript Document
 
 var root = 0;
-var chordType = 0;
+var chordType = chooseChordType(chordTypechoice);
 
 function chooseNote(noteChoice){
 	root = noteChoice;
