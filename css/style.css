@@ -11,6 +11,7 @@ button.btn.btn-default.chord.active {
     color: white;
     font-weight: 300;
     border: solid black 1px;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 
 button.btn.btn-default.note {
@@ -23,6 +24,7 @@ button.btn.btn-default.note.active {
     color: white;
     font-weight: 300;
     border: solid black 1px;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 
 canvas#myCanvas{
@@ -40,6 +42,7 @@ div#labelC {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelCsharp {
     position: absolute;
@@ -48,6 +51,7 @@ div#labelCsharp {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelD {
     position: absolute;
@@ -56,6 +60,7 @@ div#labelD {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelDsharp {
     position: absolute;
@@ -64,6 +69,7 @@ div#labelDsharp {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelE {
     position: absolute;
@@ -72,6 +78,7 @@ div#labelE {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelF {
     position: absolute;
@@ -80,6 +87,7 @@ div#labelF {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelFsharp {
     position: absolute;
@@ -88,6 +96,7 @@ div#labelFsharp {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelG {
         position: absolute;
@@ -96,6 +105,7 @@ div#labelG {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelGsharp {
 position: absolute;
@@ -104,6 +114,7 @@ position: absolute;
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelA {
     position: absolute;
@@ -112,6 +123,7 @@ div#labelA {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelAsharp {
     position: absolute;
@@ -120,6 +132,7 @@ div#labelAsharp {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 div#labelB {
     position: absolute;
@@ -128,6 +141,7 @@ div#labelB {
     font-size: 27px;
     color: white;
     font-weight: bolder;
+	text-shadow: black 0.1em 0.1em 0.2em
 }
 h2{
 	text-align: center;	
