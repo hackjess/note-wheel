@@ -13,7 +13,7 @@ function chooseNote(noteChoice){
 }
 
 function chooseChordType(chordTypechoice){
-    for (i = 0; i < 11; i++){
+    for (i = 0; i < 12; i++){
 		config.data.datasets[0].data[i] = 65;
 	}
 	var chordType = chordTypechoice;
