@@ -43,7 +43,7 @@ div#labelC {
 }
 div#labelCsharp {
     position: absolute;
-    left: 62%;
+    left: 63%;
     top: 25%;
     font-size: 27px;
     color: white;
@@ -59,8 +59,8 @@ div#labelD {
 }
 div#labelDsharp {
     position: absolute;
-    left: 68%;
-    top: 53%;
+    left: 69%;
+    top: 54.5%;
     font-size: 27px;
     color: white;
     font-weight: bolder;
@@ -73,10 +73,58 @@ div#labelE {
     color: white;
     font-weight: bolder;
 }
-div#labelF{
+div#labelF {
     position: absolute;
-    left: 68%;
-    top: 71%;
+    left: 57%;
+    top: 80%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelFsharp {
+    position: absolute;
+    left: 40.5%;
+    top: 79%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelG {
+        position: absolute;
+    left: 30.5%;
+    top: 70%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelGsharp {
+position: absolute;
+    left: 24.5%;
+    top: 56%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelA {
+    position: absolute;
+    left: 25%;
+    top: 38%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelAsharp {
+    position: absolute;
+    left: 30%;
+    top: 24%;
+    font-size: 27px;
+    color: white;
+    font-weight: bolder;
+}
+div#labelB {
+    position: absolute;
+    left: 43.5%;
+    top: 14%;
     font-size: 27px;
     color: white;
     font-weight: bolder;
