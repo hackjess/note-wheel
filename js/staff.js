@@ -1,3 +1,4 @@
+$(function(){
 VF = Vex.Flow;
 
 // Create an SVG renderer and attach it to the DIV element named "boo".
@@ -43,3 +44,4 @@ var formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
 
 // Render voice
 voice.draw(context, stave);
+});

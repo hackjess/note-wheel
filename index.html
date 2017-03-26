@@ -11,12 +11,11 @@
 <!--Local Styling-->
 <link rel="stylesheet" href="css/style.css">
 <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
-
+<script type="text/javascript" src="https://npmcdn.com/vexflow/releases/vexflow-debug.js"></script>
 <script src="Chart/dist/Chart.bundle.js"></script>
 <script src="js/wheel.js"></script>
 <script src="js/chordBuilder.js"></script>
 <script src="js/staff.js"></script>
-
 <script>
 $(document).ready(function() {
 $(".btn-group.note button").click(function () {
@@ -33,7 +32,6 @@ $(".btn-group.chord button").click(function () {
 
 });
 </script>
-
 </head>
 
 <body>
@@ -48,47 +46,51 @@ $(".btn-group.chord button").click(function () {
   </div>
   <!--col-->
   <div class="col-md-4">
-  <div class="row">Instructions Row</div>
-  
+    <div class="row">Instructions Row</div>
     <div class="NoteGroup">
-    <label>Root Note</label><br/>
-    <div class="btn-group note" role="group" aria-label="RootNote">
-      <button onClick="chooseNote(0)" type="button" class="btn btn-default note">C</button>
-      <button onClick="chooseNote(1)" type="button" class="btn btn-default note">C#/Db</button>
-      <button onClick="chooseNote(2)" type="button" class="btn btn-default note">D</button>
-      <button onClick="chooseNote(3)" type="button" class="btn btn-default note">D#/Eb</button>
-      <button onClick="chooseNote(4)" type="button" class="btn btn-default note">E</button>
-      <button pnClick="chooseNote(5)" type="button" class="btn btn-default note">F</button><br/>
-      <button onClick="chooseNote(6)" type="button" class="btn btn-default note">F#/Gb</button>
-      <button onClick="chooseNote(7)" type="button" class="btn btn-default note">G</button>
-      <button onClick="chooseNote(8)" type="button" class="btn btn-default note">G#/Ab</button>
-      <button onClick="chooseNote(9)" type="button" class="btn btn-default note">A</button>
-      <button onClick="chooseNote(10)" type="button" class="btn btn-default note">A#/Bb</button>
-      <button onClick="chooseNote(11)" type="button" class="btn btn-default note">B</button>
-    </div> 
-    </div><br/>
-	
-    <div class="ChordGroup">
-    <label>Chord Type</label><br/>
-    <div class="btn-group chord" role="group" aria-label="Chord">
-      <button id="Major" type="button" onClick="chooseChordType(0)" class="btn btn-default chord">Major</button>
-      <button id="Minor" type="button" onClick="chooseChordType(1)" class="btn btn-default chord">Minor</button>
-      <button id="Dim" type="button" onClick="chooseChordType(2)" class="btn btn-default chord">Diminished</button> <br/>
-      <button id="Sus2" type="button" onClick="chooseChordType(3)" class="btn btn-default chord">Sus2</button>
-      <button id="Sus4" type="button" onClick="chooseChordType(4)"  class="btn btn-default chord">Sus4</button>
-      <button id="Aug" type="button" onClick="chooseChordType(5)" class="btn btn-default chord">Augmented</button>
+      <label>Root Note</label>
+      <br/>
+      <div class="btn-group note" role="group" aria-label="RootNote">
+        <button onClick="chooseNote(0)" type="button" class="btn btn-default note">C</button>
+        <button onClick="chooseNote(1)" type="button" class="btn btn-default note">C#/Db</button>
+        <button onClick="chooseNote(2)" type="button" class="btn btn-default note">D</button>
+        <button onClick="chooseNote(3)" type="button" class="btn btn-default note">D#/Eb</button>
+        <button onClick="chooseNote(4)" type="button" class="btn btn-default note">E</button>
+        <button pnClick="chooseNote(5)" type="button" class="btn btn-default note">F</button>
+        <br/>
+        <button onClick="chooseNote(6)" type="button" class="btn btn-default note">F#/Gb</button>
+        <button onClick="chooseNote(7)" type="button" class="btn btn-default note">G</button>
+        <button onClick="chooseNote(8)" type="button" class="btn btn-default note">G#/Ab</button>
+        <button onClick="chooseNote(9)" type="button" class="btn btn-default note">A</button>
+        <button onClick="chooseNote(10)" type="button" class="btn btn-default note">A#/Bb</button>
+        <button onClick="chooseNote(11)" type="button" class="btn btn-default note">B</button>
+      </div>
     </div>
-    </div> 
+    <br/>
+    <div class="ChordGroup">
+      <label>Chord Type</label>
+      <br/>
+      <div class="btn-group chord" role="group" aria-label="Chord">
+        <button id="Major" type="button" onClick="chooseChordType(0)" class="btn btn-default chord">Major</button>
+        <button id="Minor" type="button" onClick="chooseChordType(1)" class="btn btn-default chord">Minor</button>
+        <button id="Dim" type="button" onClick="chooseChordType(2)" class="btn btn-default chord">Diminished</button>
+        <br/>
+        <button id="Sus2" type="button" onClick="chooseChordType(3)" class="btn btn-default chord">Sus2</button>
+        <button id="Sus4" type="button" onClick="chooseChordType(4)"  class="btn btn-default chord">Sus4</button>
+        <button id="Aug" type="button" onClick="chooseChordType(5)" class="btn btn-default chord">Augmented</button>
+      </div>
+    </div>
+    <!--row-->
+    <div class="row">
+      <div id="boo"></div>
+    </div>
   </div>
   <div class="col-md-1"></div>
 </div>
-<!--row-->
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
