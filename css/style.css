@@ -32,6 +32,14 @@ canvas#myCanvas{
 	text-align: center;
 }
 
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 0px;
+    font-weight: 700;
+}
+
+
 div#canvas-holder{
 	padding-left: 100px;	
 }
@@ -152,12 +160,14 @@ h2{
   height: 500px;
 }
 
-.NoteGroup label{
-	text-align: center;
-	display: block;
+.NoteGroup label {
+    text-align: center;
+    display: block;
+    font-size: 23px;
 }
 
-.ChordGroup label{
-	text-align: center;
-	display: block;
+.ChordGroup label {
+    text-align: center;
+    display: block;
+    font-size: 22px;
 }
