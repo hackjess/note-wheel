@@ -1,7 +1,7 @@
 // JavaScript Document
 
-// declare intervals
-var root = chooseNote(noteChoice);
+var root = 0;
+var chordType = 0;
 
 function chooseNote(noteChoice){
 	root = noteChoice;
@@ -9,14 +9,29 @@ function chooseNote(noteChoice){
 		config.data.datasets[0].data[i] = 65;
 	}  
 	window.myPolarArea.update();
+	changeChart(root, chordType);
+	window.myPolarArea.update();
+	
 	return root;
 }
 
 function chooseChordType(chordTypechoice){
-    for (i = 0; i < 12; i++){
+    chordType = chordTypechoice;
+	for (i = 0; i < 12; i++){
 		config.data.datasets[0].data[i] = 65;
 	}
-	var chordType = chordTypechoice;
+	window.myPolarArea.update();
+	changeChart(root, chordType);
+	window.myPolarArea.update();
+	return chordType;
+}
+
+
+function changeChart(root, chord){
+	var root = root;
+	window.myPolarArea.update();
+	var chordType = chord;
+	window.myPolarArea.update();
 	var MAJOR_SECOND = root + 2;
 	var MINOR_THIRD = root + 3;
 	var MAJOR_THIRD = root + 4;
@@ -27,6 +42,9 @@ function chooseChordType(chordTypechoice){
 	var MAJOR_SIXTH = root + 9;
 	var MINOR_SEVENTH = root + 10;
 	var MAJOR_SEVENTH = root + 11;
+	
+	var root = root;
+	console.log(root);
 	
 	if (MAJOR_SECOND > 11){
 		MAJOR_SECOND = MAJOR_SECOND - 12;
@@ -198,10 +216,4 @@ function chooseChordType(chordTypechoice){
 		config.data.datasets[0].data[MAJOR_SECOND] = 85;
 		window.myPolarArea.update();
  	}
-	return chordType;
 }
-
-
-
-	
-	
