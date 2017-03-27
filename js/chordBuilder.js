@@ -20,7 +20,7 @@ function chooseNote(noteChoice){
 		config.data.datasets[0].data[i] = 65;
 	}
 	window.myPolarArea.update();
-	if (noteChordChoice.chord !=""){
+	if (noteChordChoice.chord !== ""){
 		changeChart(noteChordChoice.root, noteChordChoice.chord);
 	}
 	window.myPolarArea.update();
@@ -34,7 +34,9 @@ function chooseChordType(chord){
 		config.data.datasets[0].data[i] = 65;
 	}
 	window.myPolarArea.update();
-	changeChart(noteChordChoice.root, noteChordChoice.chord);
+	if (noteChordChoice.root !== ""){
+		changeChart(noteChordChoice.root, noteChordChoice.chord);
+	}
 	window.myPolarArea.update();
 	return noteChordChoice.chord;
 }
@@ -51,6 +53,7 @@ function changeChart(root, chord){
 	noteChordChoice.MAJOR_SIXTH = root + 9;
 	noteChordChoice.MINOR_SEVENTH = root + 10;
 	noteChordChoice.MAJOR_SEVENTH = root + 11;
+	noteChordChoice.MAJOR_SECOND = root + 2;
 	
 	if (noteChordChoice.MAJOR_SECOND > 11){
 		noteChordChoice.MAJOR_SECOND =- 12;
@@ -77,7 +80,7 @@ function changeChart(root, chord){
 		noteChordChoice.MAJOR_SIXTH  = noteChordChoice.MAJOR_SIXTH - 12;
 	}
 	if (noteChordChoice.MINOR_SEVENTH > 11){
-		noteChordChoice.MINOR_SEVENTH= noteChordChoice.MINOR_SEVENTH - 12;
+		noteChordChoice.MINOR_SEVENTH = noteChordChoice.MINOR_SEVENTH - 12;
 	}
 	if (noteChordChoice.MAJOR_SEVENTH > 11){
 		noteChordChoice.MAJOR_SEVENTH = noteChordChoice.MAJOR_SEVENTH - 12;
