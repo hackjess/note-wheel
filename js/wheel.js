@@ -45,6 +45,9 @@
 					display: false
        			}
     		},
+			tooltips: {
+          enabled: false
+        },
 			
 			responsive: true,
   legend: {
