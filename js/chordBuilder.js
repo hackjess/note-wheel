@@ -13,6 +13,9 @@ var noteChordChoice = new Object();
 	noteChordChoice.MAJOR_SIXTH = "";
 	noteChordChoice.MINOR_SEVENTH = "";
 	noteChordChoice.MAJOR_SEVENTH = "";
+	noteChordChoice.bigNotes = ""; 
+	
+	var bigNotes = "";
 
 function chooseNote(noteChoice){
 	noteChordChoice.root = noteChoice;
@@ -152,12 +155,12 @@ function changeChart(root, chord){
 		config.data.datasets[0].data[noteChordChoice.MINOR_SEVENTH] = 85;
 		window.myPolarArea.update();
  	}
-		//Half Diminished
+	//Half Diminished
 	else if (chord == 9){
 		config.data.datasets[0].data[noteChordChoice.root] = 85;
 		config.data.datasets[0].data[noteChordChoice.MINOR_THIRD] = 85;
 		config.data.datasets[0].data[noteChordChoice.DIMINISHED_FIFTH] = 85;
-		config.data.datasets[0].data[noteChordChoice.MAJOR_SEVENTH] = 85;
+		config.data.datasets[0].data[noteChordChoice.MINOR_SEVENTH] = 85;
 		window.myPolarArea.update();
  	}
 		//Diminished
@@ -165,7 +168,7 @@ function changeChart(root, chord){
 		config.data.datasets[0].data[noteChordChoice.root] = 85;
 		config.data.datasets[0].data[noteChordChoice.MINOR_THIRD] = 85;
 		config.data.datasets[0].data[noteChordChoice.DIMINISHED_FIFTH] = 85;
-		config.data.datasets[0].data[noteChordChoice.MINOR_SEVENTH] = 85;
+		config.data.datasets[0].data[noteChordChoice.MAJOR_SIXTH] = 85;
 		window.myPolarArea.update();
  	}
 		//Sixth
