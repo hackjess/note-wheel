@@ -187,6 +187,7 @@ function changeChart(root, chord){
 		config.data.datasets[0].data[noteChordChoice.MAJOR_THIRD] = 85;
 		config.data.datasets[0].backgroundColor[noteChordChoice.MAJOR_THIRD] = sliceColors[root + 4];
 		config.data.datasets[0].data[noteChordChoice.AUGMENTED_FIFTH] = 85;
+		config.data.datasets[0].backgroundColor[noteChordChoice.AUGMENTED_FIFTH] = sliceColors[root + 8];
 		window.myPolarArea.update();
  	}
 	//Major 7th
